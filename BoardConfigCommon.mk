@@ -38,6 +38,9 @@ TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := krait
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
+# Assertions
+TARGET_BOARD_INFO_FILE ?= device/oppo/msm8974-common/board-info.txt
+
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := device/oppo/msm8974-common/mkbootimg.mk
 BOARD_KERNEL_BASE := 0x00000000
@@ -74,6 +77,7 @@ BOARD_HARDWARE_CLASS += device/oppo/msm8974-common/cmhw
 # Graphics
 BOARD_EGL_CFG := device/oppo/msm8974-common/configs/egl.cfg
 USE_OPENGL_RENDERER := true
+TARGET_CONTINUOUS_SPLASH_ENABLED := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so

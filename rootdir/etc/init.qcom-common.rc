@@ -293,6 +293,9 @@ on post-fs-data
     mkdir /data/system/perfd 0770 root system
     chmod 2770 /data/system/perfd
 
+    # camera sockets
+    mkdir /data/misc/camera 0770 camera camera
+
 on fs
     mkdir /dev/usb-ffs 0770 shell shell
     mkdir /dev/usb-ffs/adb 0770 shell shell
@@ -445,7 +448,7 @@ service dpmd /system/bin/dpmd
     class late_start
     socket dpmd stream 660 root system
 
-service irsc_util /system/bin/logwrapper /system/bin/irsc_util "/etc/sec_config"
+service irsc_util /system/bin/irsc_util "/etc/sec_config"
     class main
     user root
     oneshot
